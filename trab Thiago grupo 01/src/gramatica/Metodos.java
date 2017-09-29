@@ -40,4 +40,32 @@ public class Metodos {
 		return inputdoUsuario;
 	}
 
+	// Atulizado dia 29/09
+
+	/**
+	 * Usa os métodos de leitura e seperação de Strings para ler o alfabeto
+	 * inserido pelo usuario e o separar em um vetor, atravéz de virgulas.
+	 * 
+	 * @return um vetor de String contendo o Alfabeto
+	 */
+	public String[] lerAlfabeto() {
+		String[] alfabeto = null;
+		System.out.println("Insira os simbolos do alfabeto separados por , (Vírgula) :");
+		String alfabetoInteiro = recebeString();
+		alfabeto = divideString(",", alfabetoInteiro);
+		return alfabeto;
+	}
+
+	/**
+	 * Recebo do usuario os símbolos terminais e as separa dentro de um vetor
+	 * 
+	 * @return Vetor contendo os símbolos terminais
+	 */
+	public String[] lerTerminais() {
+		String[] terminais = null;
+		System.out.println("Insira os simbolos terminais separados por ',' (Vírgula) :");
+		String letrasTerminais = recebeString();
+		terminais = divideString(",", letrasTerminais);
+		return terminais;
+	}
 }
