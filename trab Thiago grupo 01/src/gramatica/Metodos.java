@@ -11,8 +11,8 @@ import java.util.Scanner;
 public class Metodos {
 	
 	private String partida;
-	private String terminais;
 	private String palavra;
+	private ArrayList<String> terminais = new ArrayList<>();
 	private ArrayList<Regra> regra = new ArrayList<Regra>();
 	
 	/**
@@ -20,10 +20,7 @@ public class Metodos {
 	 */
 	public Metodos() {
 		
-	//	System.out.print("Entre com o ponto de Partida : ");
-	//	partida = recebeString();
-	//	System.out.print("Entre com os estados terminais os separando por , (Vírgula) : ");
-	//	terminais = recebeString();
+	//caracterTerminais();
 	//	System.out.print("Entre com palavra a ser computada : ");
 	//	palavra = recebeString();
 	//	separarRegraProducao(regraProducao);
@@ -85,6 +82,21 @@ public class Metodos {
 	 */
 	public void pontoDePartida(){
 		partida = recebeString();
+	}
+	
+	/**
+	 * Pega a String passada pelo usuario a separando e guardando na Lista de terminais.
+	 */
+	public void caracterTerminais(){
+		System.out.println("Entre com os Terminais os separando por , (Virgula) Ex: a,b :");
+		String terminaisNaoSeparado = recebeString();
+		String[] terminaisSeparadoEmVetor = terminaisNaoSeparado.split(",");
+		for(int i = 0; i < terminaisSeparadoEmVetor.length; i++){
+			terminais.add(terminaisSeparadoEmVetor[i]);
+		}
+		for (int i = 0; i < terminais.size(); i++) {
+			System.out.println(terminais.get(i));
+		}
 	}
 
 }
