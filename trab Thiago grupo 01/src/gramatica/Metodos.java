@@ -15,7 +15,7 @@ public class Metodos {
 		regra = new ArrayList<Regra>();
 	//	System.out.print("Entre com o ponto de Partida : ");
 	//	partida = recebeString();
-	//	System.out.print("Entre com os estados terminais os separando por , (VÃ­rgula) : ");
+	//	System.out.print("Entre com os estados terminais os separando por , (Vírgula) : ");
 	//	terminais = recebeString();
 		System.out.print("Entre com regra de producao os separando por / ( Barra ) deixando bem claro a separacao \nExemplo: (S>aSb,S>a,S>a) ou (S/aSb,S/a,S/a): ");
 	//	regraProducao = recebeString();
