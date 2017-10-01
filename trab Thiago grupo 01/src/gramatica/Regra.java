@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * e temos um Arraylist<AlfabetoGerado> contento o alfabeto que pode ser substituido por este caracter da regra.
  */
 public class Regra {
-	private char regra;
+	private String regra;
 	private ArrayList<AlfabetoGerado> alfabetoGerado;
 	
 	/**
@@ -25,7 +25,7 @@ public class Regra {
 	 * 
 	 * @param regra recebe uma String.
 	 */
-	public Regra(char regra) {
+	public Regra(String regra) {
 		this.regra = regra;
 		alfabetoGerado = new ArrayList<AlfabetoGerado>();
 	}
@@ -34,7 +34,7 @@ public class Regra {
 	 * Pega a String guardada em uma possicao
 	 * @return retorna String na possicao.
 	 */
-	public char getRegra() {
+	public String getRegra() {
 		return regra;
 	}
 
@@ -42,7 +42,7 @@ public class Regra {
 	 * Edita a regra em uma possicao.
 	 * @param regra String de substituicao.
 	 */
-	public void setRegra(char regra) {
+	public void setRegra(String regra) {
 		this.regra = regra;
 	}
 	
