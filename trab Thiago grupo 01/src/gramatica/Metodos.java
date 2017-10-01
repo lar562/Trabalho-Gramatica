@@ -3,6 +3,11 @@ package gramatica;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * 
+ * @author RafaelSene
+ * Class responsavel pelo programa onde esta todos os codigos para execucao.
+ */
 public class Metodos {
 	
 	private String partida;
@@ -10,15 +15,15 @@ public class Metodos {
 	private String palavra;
 	private ArrayList<Regra> regra = new ArrayList<Regra>();
 	
-	
+	/**
+	 * Chamo as etapas do programa.
+	 */
 	public Metodos() {
 		
 	//	System.out.print("Entre com o ponto de Partida : ");
 	//	partida = recebeString();
 	//	System.out.print("Entre com os estados terminais os separando por , (Vírgula) : ");
 	//	terminais = recebeString();
-		System.out.print("Entre com regra de producao os separando por | ( Barra )\numa por fez sempre precionando ENTER em seguida, 0 (zero) para parar de entra com o alfabeto. \nExemplo: S|aSb S|a S|a: ");
-		separarRegraProducao();		
 	//	System.out.print("Entre com palavra a ser computada : ");
 	//	palavra = recebeString();
 	//	separarRegraProducao(regraProducao);
@@ -49,7 +54,9 @@ public class Metodos {
 	 * alfabeto me refiro a abS,a,b comforme o exemplo acima, ou seja alfabeto seria a String na qual a regra pode ser trocada.
 	 */
 	public void separarRegraProducao(){	
-		
+		System.out.print("Entre com regra de producao os separando por | ( Barra )"
+				+ "\numa por fez sempre precionando ENTER em seguida, 0 (zero) para parar de entra com o alfabeto."
+				+ " \nExemplo: S|aSb S|a S|a: ");
 		String regraProducao;
 		do{
 			regraProducao = recebeString();
