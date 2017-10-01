@@ -98,5 +98,11 @@ public class Metodos {
 			System.out.println(terminais.get(i));
 		}
 	}
-
+	
+	/**
+	 * Pega a palavra a ser computada
+	 */
+	public void palavraParaComputar(){
+		palavra = recebeString();
+	}
 }
