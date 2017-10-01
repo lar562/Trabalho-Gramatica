@@ -79,5 +79,12 @@ public class Metodos {
 		}while(regraProducao == "0");
 				
 	}
+	
+	/**
+	 * Define o ponto de partida da computacoa da palavra.
+	 */
+	public void pontoDePartida(){
+		partida = recebeString();
+	}
 
 }
