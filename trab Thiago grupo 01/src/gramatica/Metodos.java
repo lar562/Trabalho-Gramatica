@@ -126,6 +126,7 @@ public class Metodos {
 		String computandoPalavra = partida;
 
 		do{
+			//System.out.println(computandoPalavra.charAt(0));
 			System.out.println(computandoPalavra);
 			todaComputacao.add(new String(computandoPalavra));
 			//Busca a regra na palavra que esta sendo computada.
@@ -156,7 +157,9 @@ public class Metodos {
 				for (int j = 0; j < regra.size(); j++) {
 					if(computandoPalavra.charAt(i) == regra.get(j).getRegra().charAt(0)){
 						String trocarPalavra = "" + computandoPalavra.charAt(i);
-						computandoPalavra.replaceAll(trocarPalavra, regra.get(j).pegarAlfabeto(intAlfabeto));
+						computandoPalavra = computandoPalavra.replaceFirst("S", regra.get(j).pegarAlfabeto(intAlfabeto));
+						//System.out.println(trocarPalavra);
+						System.out.println(regra.get(j).pegarAlfabeto(intAlfabeto));
 						busca = true;
 					}
 					if(busca)
@@ -165,6 +168,7 @@ public class Metodos {
 				if(busca)
 					break;
 			}
+			
 		}while(!resultado);
 	}
 }
