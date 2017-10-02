@@ -115,6 +115,9 @@ public class Metodos {
 		palavra = recebeString();
 	}
 	
+	/**
+	 * Este medoto computa a palavra conforme as escolha do usuario e mostra o resultado no final.
+	 */
 	public void computarPalavra(){
 
 		boolean resultado = false;
@@ -126,7 +129,7 @@ public class Metodos {
 
 		do{
 			todaComputacao.add(new String(computandoPalavra));
-			System.out.println(computandoPalavra);
+			System.out.println("Computar palavra : " + computandoPalavra);
 			//Busca a regra na palavra que esta sendo computada.
 			for (int i = 0; i < computandoPalavra.length(); i++) {
 				for (int j = 0; j < regra.size(); j++) {
@@ -181,7 +184,9 @@ public class Metodos {
 			}
 			
 			//Verifica se a palavra computada esta errada.
-			if((!palavra.equals(computandoPalavra) && buscaRegra == 0) || (palavra.length() < computandoPalavra.length() + 1 && buscaRegra <= computandoPalavra.length() - palavra.length())){
+			if((!palavra.equals(computandoPalavra) && buscaRegra == 0) || 
+					(palavra.length() < computandoPalavra.length() + 1 && 
+							buscaRegra <= computandoPalavra.length() - palavra.length())){
 				System.out.println("Palavra nao pode ser computada");
 				resultado = true;
 			}
