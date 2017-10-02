@@ -124,11 +124,11 @@ public class Metodos {
 		int intRegra = 0;
 		int intAlfabeto;
 		String computandoPalavra = partida;
+		int buscaRegra;
 
 		do{
-			//System.out.println(computandoPalavra.charAt(0));
-			System.out.println(computandoPalavra);
 			todaComputacao.add(new String(computandoPalavra));
+			System.out.println(computandoPalavra);
 			//Busca a regra na palavra que esta sendo computada.
 			for (int i = 0; i < computandoPalavra.length(); i++) {
 				for (int j = 0; j < regra.size(); j++) {
@@ -165,6 +165,27 @@ public class Metodos {
 				}
 				if(busca)
 					break;
+			}
+			//Verifica se a palavra computada esta toda correta.
+			if(palavra.equals(computandoPalavra)){
+				System.out.println("Palavra computada corretamente");
+				resultado = true;
+			}
+			
+			//Busca por regra de producao na palavra.
+			buscaRegra = 0;
+			for (int i = 0; i < computandoPalavra.length(); i++) {
+				for (int j = 0; j < regra.size(); j++) {
+					if(computandoPalavra.charAt(i) == regra.get(j).getRegra().charAt(0)){
+						buscaRegra++;
+					}
+				}
+			}
+			
+			//Verifica se a palavra computada esta errada.
+			if(!palavra.equals(computandoPalavra) && buscaRegra == 0){
+				System.out.println("Palavra nao pode ser computada");
+				resultado = true;
 			}
 			
 		}while(!resultado);
