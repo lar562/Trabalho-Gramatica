@@ -116,16 +116,7 @@ public class Metodos {
 	}
 	
 	public void computarPalavra(){
-	/*	palavra = "aa";
-		partida = "S";
-		terminais.add("a");
-		terminais.add("b");
-		regra.add(new Regra("S"));
-		regra.get(0).addAlfabeto("a");
-		regra.get(0).addAlfabeto("b");
-		regra.get(0).addAlfabeto("aS");
-		regra.get(0).addAlfabeto("aSb");
-		*/
+
 		boolean resultado = false;
 		boolean busca = false;
 		int intRegra = 0;
@@ -194,10 +185,6 @@ public class Metodos {
 				System.out.println("Palavra nao pode ser computada");
 				resultado = true;
 			}
-			System.out.println(palavra.length());
-			System.out.println(computandoPalavra.length());
-			System.out.println(buscaRegra);
-			System.out.println(palavra.length() - computandoPalavra.length());
 			
 		}while(!resultado);
 	}
