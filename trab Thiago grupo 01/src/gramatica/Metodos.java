@@ -21,11 +21,19 @@ public class Metodos {
 	 * Chamo as etapas do programa.
 	 */
 	public Metodos() {
-		computarPalavra();
-	//caracterTerminais();
-	//	System.out.print("Entre com palavra a ser computada : ");
-	//	palavra = recebeString();
-	//	separarRegraProducao(regraProducao);
+		String novaPalavra = "y";
+		pontoDePartida();
+		caracterTerminais();
+		separarRegraProducao();
+		do{
+			if(novaPalavra.equals("y")){
+				palavraParaComputar();
+				computarPalavra();
+				System.out.print("Deseja computar uma nova palavra y/n ?");
+				novaPalavra = recebeString();
+			}
+		}while(!novaPalavra.equals("n"));
+
 	}
 	
 	/**
@@ -53,20 +61,20 @@ public class Metodos {
 	 * alfabeto me refiro a abS,a,b comforme o exemplo acima, ou seja alfabeto seria a String na qual a regra pode ser trocada.
 	 */
 	public void separarRegraProducao(){	
-		System.out.print("Entre com regra de producao os separando por | ( Barra )"
+		System.out.print("Entre com regra de producao os separando por / ( Barra )"
 				+ "\numa por fez sempre precionando ENTER em seguida, 0 (zero) para parar de entra com o alfabeto."
-				+ " \nExemplo: S|aSb S|a S|a: ");
+				+ " \nExemplo: S/aSb S/a S/a: ");
 		String regraProducao;
 		do{
 			regraProducao = recebeString();
 			
-			if(regraProducao != "0"){
+			if(!regraProducao.equals("0")){
 				boolean regraEncontrada = false;
-				String[] regraGerada = regraProducao.split("|");
+				String[] regraGerada = regraProducao.split("/");
 				
 				for (int j = 0; j < regra.size(); j++) {
 					if(regra.get(j).getRegra().equals(regraGerada[0])){
-						regra.get(j).addAlfabeto(regraGerada[0]);
+						regra.get(j).addAlfabeto(regraGerada[1]);
 						regraEncontrada = true;
 					}
 				}
@@ -75,7 +83,7 @@ public class Metodos {
 					regra.get(regra.size() -1).addAlfabeto(regraGerada[1]);
 				}
 			}
-		}while(regraProducao == "0");
+		}while(!regraProducao.equals("0"));
 				
 	}
 	
@@ -83,6 +91,7 @@ public class Metodos {
 	 * Define o ponto de partida da computacoa da palavra.
 	 */
 	public void pontoDePartida(){
+		System.out.print("Entre com o Caracter de Inicio : ");
 		partida = recebeString();
 	}
 	
@@ -90,14 +99,11 @@ public class Metodos {
 	 * Pega a String passada pelo usuario a separando e guardando na Lista de terminais.
 	 */
 	public void caracterTerminais(){
-		System.out.println("Entre com os Terminais os separando por , (Virgula) Ex: a,b :");
+		System.out.print("Entre com os Terminais os separando por , (Virgula) Ex: a,b : ");
 		String terminaisNaoSeparado = recebeString();
 		String[] terminaisSeparadoEmVetor = terminaisNaoSeparado.split(",");
 		for(int i = 0; i < terminaisSeparadoEmVetor.length; i++){
 			terminais.add(terminaisSeparadoEmVetor[i]);
-		}
-		for (int i = 0; i < terminais.size(); i++) {
-			System.out.println(terminais.get(i));
 		}
 	}
 	
@@ -105,11 +111,12 @@ public class Metodos {
 	 * Pega a palavra a ser computada
 	 */
 	public void palavraParaComputar(){
+		System.out.print("Entre com a palavra a ser computada : ");
 		palavra = recebeString();
 	}
 	
 	public void computarPalavra(){
-		palavra = "aa";
+	/*	palavra = "aa";
 		partida = "S";
 		terminais.add("a");
 		terminais.add("b");
@@ -118,7 +125,7 @@ public class Metodos {
 		regra.get(0).addAlfabeto("b");
 		regra.get(0).addAlfabeto("aS");
 		regra.get(0).addAlfabeto("aSb");
-		
+		*/
 		boolean resultado = false;
 		boolean busca = false;
 		int intRegra = 0;
@@ -183,10 +190,14 @@ public class Metodos {
 			}
 			
 			//Verifica se a palavra computada esta errada.
-			if(!palavra.equals(computandoPalavra) && buscaRegra == 0){
+			if((!palavra.equals(computandoPalavra) && buscaRegra == 0) || (palavra.length() < computandoPalavra.length() + 1 && buscaRegra <= computandoPalavra.length() - palavra.length())){
 				System.out.println("Palavra nao pode ser computada");
 				resultado = true;
 			}
+			System.out.println(palavra.length());
+			System.out.println(computandoPalavra.length());
+			System.out.println(buscaRegra);
+			System.out.println(palavra.length() - computandoPalavra.length());
 			
 		}while(!resultado);
 	}
