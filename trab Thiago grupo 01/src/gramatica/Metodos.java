@@ -157,9 +157,7 @@ public class Metodos {
 				for (int j = 0; j < regra.size(); j++) {
 					if(computandoPalavra.charAt(i) == regra.get(j).getRegra().charAt(0)){
 						String trocarPalavra = "" + computandoPalavra.charAt(i);
-						computandoPalavra = computandoPalavra.replaceFirst("S", regra.get(j).pegarAlfabeto(intAlfabeto));
-						//System.out.println(trocarPalavra);
-						System.out.println(regra.get(j).pegarAlfabeto(intAlfabeto));
+						computandoPalavra = computandoPalavra.replaceFirst(regra.get(j).getRegra(), regra.get(j).pegarAlfabeto(intAlfabeto));
 						busca = true;
 					}
 					if(busca)
