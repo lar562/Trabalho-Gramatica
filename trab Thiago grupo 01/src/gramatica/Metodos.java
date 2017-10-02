@@ -29,9 +29,9 @@ public class Metodos {
 			if(novaPalavra.equals("y")){
 				palavraParaComputar();
 				computarPalavra();
-				System.out.print("Deseja computar uma nova palavra y/n ?");
-				novaPalavra = recebeString();
 			}
+			System.out.print("Deseja computar uma nova palavra y/n ?");
+			novaPalavra = recebeString();
 		}while(!novaPalavra.equals("n"));
 
 	}
@@ -83,8 +83,7 @@ public class Metodos {
 					regra.get(regra.size() -1).addAlfabeto(regraGerada[1]);
 				}
 			}
-		}while(!regraProducao.equals("0"));
-				
+		}while(!regraProducao.equals("0"));	
 	}
 	
 	/**
@@ -121,19 +120,21 @@ public class Metodos {
 	public void computarPalavra(){
 
 		boolean resultado = false;
-		boolean busca = false;
-		int intRegra = 0;
+		int intRegra = -1;
 		int intAlfabeto;
 		String computandoPalavra = partida;
 		int buscaRegra;
 
 		do{
+			boolean busca = false;
 			todaComputacao.add(new String(computandoPalavra));
 			System.out.println("Computar palavra : " + computandoPalavra);
 			//Busca a regra na palavra que esta sendo computada.
 			for (int i = 0; i < computandoPalavra.length(); i++) {
 				for (int j = 0; j < regra.size(); j++) {
-					if(computandoPalavra.charAt(i) == regra.get(j).getRegra().charAt(0)){
+					String primeiro = computandoPalavra.charAt(i) + "";
+					String segundo =  regra.get(j).getRegra();
+					if(primeiro.equals(segundo) ){
 						intRegra = j;
 						busca = true;
 					}
@@ -156,7 +157,9 @@ public class Metodos {
 			//Busca a regra na palavra que esta sendo computada.
 			for (int i = 0; i < computandoPalavra.length(); i++) {
 				for (int j = 0; j < regra.size(); j++) {
-					if(computandoPalavra.charAt(i) == regra.get(j).getRegra().charAt(0)){
+					String primeiro = computandoPalavra.charAt(i) + "";
+					String segundo =  regra.get(j).getRegra() + "";
+					if(primeiro.equals(segundo) ){
 						String trocarPalavra = "" + computandoPalavra.charAt(i);
 						computandoPalavra = computandoPalavra.replaceFirst(regra.get(j).getRegra(), regra.get(j).pegarAlfabeto(intAlfabeto));
 						busca = true;
@@ -177,20 +180,28 @@ public class Metodos {
 			buscaRegra = 0;
 			for (int i = 0; i < computandoPalavra.length(); i++) {
 				for (int j = 0; j < regra.size(); j++) {
-					if(computandoPalavra.charAt(i) == regra.get(j).getRegra().charAt(0)){
+					String primeiro = computandoPalavra.charAt(i) + "";
+					String segundo =  regra.get(j).getRegra() + "";
+					if(primeiro.equals(segundo) ){
 						buscaRegra++;
 					}
 				}
 			}
 			
 			//Verifica se a palavra computada esta errada.
-			if((!palavra.equals(computandoPalavra) && buscaRegra == 0) || 
+			if((!palavra.equals(computandoPalavra) && buscaRegra == 0 && !resultado) || 
 					(palavra.length() < computandoPalavra.length() + 1 && 
-							buscaRegra <= computandoPalavra.length() - palavra.length())){
+							buscaRegra <= computandoPalavra.length() - palavra.length() && !resultado)){
 				System.out.println("Palavra nao pode ser computada");
 				resultado = true;
 			}
 			
 		}while(!resultado);
+		todaComputacao.add(new String(computandoPalavra));
+		System.out.println("Toda computacao feita: ");
+		for (int i = 0; i < todaComputacao.size(); i++) {
+			System.out.println(todaComputacao.get(i));
+		}
+		todaComputacao.removeAll(todaComputacao);
 	}
 }
