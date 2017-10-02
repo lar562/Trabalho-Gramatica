@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * 
- * @author RafaelSene
  * Class responsavel pelo programa onde esta todos os codigos para execucao.
+ * @author RafaelSene
+ * 
  */
 public class Metodos {
 	
@@ -50,13 +50,13 @@ public class Metodos {
 	 * Cria e separa a regra de producao.
 	 * Ficando em loop ate o usuario passa "0"
 	 * Dentro do loop recebemos o que o usuario digitou e logo em siguida temos os seguinte tratamento:
-	 * String[] regraGerada = regraProducao.split("|"); >> Separa a regra do alfabeto
+	 * String[] regraGerada = regraProducao.split("/");  Separa a regra do alfabeto.
 	 * As linha seguintes pega o que foi separado e verifica se tem na Lista, se tem e so adicionado mais um alfabeto a determinada regra
 	 * caso nao tenha ele ja cria a regra e adiciona o alfabeto a essa regra.
 	 * Lembrando:
-	 * Ex:	X -> abS
-	 * 		X -> a
-	 * 		Y -> b
+	 * Ex:	X - abS
+	 * 		X - a
+	 * 		Y - b
 	 * Regra me refiro a X e Y comforme o exemplo acima.
 	 * alfabeto me refiro a abS,a,b comforme o exemplo acima, ou seja alfabeto seria a String na qual a regra pode ser trocada.
 	 */

@@ -3,10 +3,9 @@ package gramatica;
 import java.util.ArrayList;
 
 /**
- * 
- * @author RafaelSene
  * Class criada para guarda regras de producao onde temos uma regra que referece a um caracter espesifico
- * e temos um Arraylist<AlfabetoGerado> contento o alfabeto que pode ser substituido por este caracter da regra.
+ * e temos um Arraylist(AlfabetoGerado) contento o alfabeto que pode ser substituido por este caracter da regra.
+ * @author RafaelSene
  */
 public class Regra {
 	private String regra;
@@ -15,13 +14,13 @@ public class Regra {
 	/**
 	 * Recebe uma String do usuario para criacao do Array nele criamos uma Matriz.
 	 * Para cada regra temos varios alfabetos.
-	 * Ex : X -> abS
-	 * 		X -> a
-	 * 		Y -> b
-	 * Em regra.get(Possicao).getRegra >> temos:X(Possicao[0]) , Y(Possicao[1]).
-	 * Em regra.get(Possicao).alfabetoGerado.get(Possicao).getAlfabeto >> Em X(Possicao[0]) Temos: abS(Possicao[0])
-	 * Em regra.get(Possicao).alfabetoGerado.get(Possicao).getAlfabeto >> Em X(Possicao[1]) Temos: a(Possicao[1])
-	 * Em regra.get(Possicao).alfabetoGerado.get(Possicao).getAlfabeto >> EM Y(Possicao[1]) Temos: b(Possicao[0])
+	 * Ex : X - abS
+	 * 		X - a
+	 * 		Y - b
+	 * Em regra.get(Possicao).getRegra - temos:X(Possicao[0]) , Y(Possicao[1]).
+	 * Em regra.get(Possicao).alfabetoGerado.get(Possicao).getAlfabeto - Em X(Possicao[0]) Temos: abS(Possicao[0])
+	 * Em regra.get(Possicao).alfabetoGerado.get(Possicao).getAlfabeto - Em X(Possicao[1]) Temos: a(Possicao[1])
+	 * Em regra.get(Possicao).alfabetoGerado.get(Possicao).getAlfabeto - EM Y(Possicao[1]) Temos: b(Possicao[0])
 	 * 
 	 * @param regra recebe uma String.
 	 */
