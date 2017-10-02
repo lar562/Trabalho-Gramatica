@@ -1,5 +1,6 @@
 package gramatica;
 
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -14,12 +15,13 @@ public class Metodos {
 	private String palavra;
 	private ArrayList<String> terminais = new ArrayList<>();
 	private ArrayList<Regra> regra = new ArrayList<Regra>();
+	private ArrayList<String> todaComputacao = new ArrayList<String>();
 	
 	/**
 	 * Chamo as etapas do programa.
 	 */
 	public Metodos() {
-		
+		computarPalavra();
 	//caracterTerminais();
 	//	System.out.print("Entre com palavra a ser computada : ");
 	//	palavra = recebeString();
@@ -104,5 +106,65 @@ public class Metodos {
 	 */
 	public void palavraParaComputar(){
 		palavra = recebeString();
+	}
+	
+	public void computarPalavra(){
+		palavra = "aa";
+		partida = "S";
+		terminais.add("a");
+		terminais.add("b");
+		regra.add(new Regra("S"));
+		regra.get(0).addAlfabeto("a");
+		regra.get(0).addAlfabeto("b");
+		regra.get(0).addAlfabeto("aS");
+		regra.get(0).addAlfabeto("aSb");
+		
+		boolean resultado = false;
+		boolean busca = false;
+		int intRegra = 0;
+		int intAlfabeto;
+		String computandoPalavra = partida;
+
+		do{
+			System.out.println(computandoPalavra);
+			todaComputacao.add(new String(computandoPalavra));
+			//Busca a regra na palavra que esta sendo computada.
+			for (int i = 0; i < computandoPalavra.length(); i++) {
+				for (int j = 0; j < regra.size(); j++) {
+					if(computandoPalavra.charAt(i) == regra.get(j).getRegra().charAt(0)){
+						intRegra = j;
+						busca = true;
+					}
+					if(busca)
+						break;
+				}
+				if(busca)
+					break;
+			}
+			busca = false;
+			System.out.println("Escolha uma das opcoes:");
+			//Lista as opcoes.
+			for (int i = 0; i < regra.get(intRegra).tamanho(); i++) {
+				System.out.println(i + " = " + regra.get(intRegra).getRegra() + " -> " + regra.get(intRegra).pegarAlfabeto(i));
+			}
+			//Entra com o valor da escolha.
+			Scanner input = new Scanner(System.in);
+			intAlfabeto = input.nextInt();
+			
+			//Busca a regra na palavra que esta sendo computada.
+			for (int i = 0; i < computandoPalavra.length(); i++) {
+				for (int j = 0; j < regra.size(); j++) {
+					if(computandoPalavra.charAt(i) == regra.get(j).getRegra().charAt(0)){
+						String trocarPalavra = "" + computandoPalavra.charAt(i);
+						computandoPalavra.replaceAll(trocarPalavra, regra.get(j).pegarAlfabeto(intAlfabeto));
+						busca = true;
+					}
+					if(busca)
+						break;
+				}
+				if(busca)
+					break;
+			}
+		}while(!resultado);
 	}
 }
