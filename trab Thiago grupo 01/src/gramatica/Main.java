@@ -3,7 +3,6 @@ package gramatica;
 /**
  * Class principal, funcao unica de chamar a class Metodos.
  * @author RafaelSene
- *
  */
 public class Main {
 
