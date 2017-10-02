@@ -31,7 +31,7 @@ public class Regra {
 	}
 
 	/**
-	 * Pega a String guardada em uma possicao
+	 * Pega a String guardada em uma possicao.
 	 * @return retorna String na possicao.
 	 */
 	public String getRegra() {
@@ -47,7 +47,7 @@ public class Regra {
 	}
 	
 	/**
-	 * Adiciona um alfabeto referente a regra
+	 * Adiciona um alfabeto referente a regra.
 	 * @param entraAlfabeto String na qual voce entra com o alfabeto e e guardado.
 	 */
 	public void addAlfabeto(String entraAlfabeto) {
@@ -68,7 +68,7 @@ public class Regra {
 	
 	/**
 	 * Retorna o tamanho do alfabeto que um caracter especifico pode gerar.
-	 * @return retorna tamanho (int)
+	 * @return retorna tamanho (int).
 	 */
 	public int tamanho(){
 		int tam = alfabetoGerado.size();
