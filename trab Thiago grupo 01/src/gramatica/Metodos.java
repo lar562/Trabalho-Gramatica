@@ -154,6 +154,9 @@ public class Metodos {
 			Scanner input = new Scanner(System.in);
 			intAlfabeto = input.nextInt();
 			
+			//Adiciona as escolha de transacao para motra ao usuario depois.
+			todaComputacao.add(new String(regra.get(intRegra).getRegra() + " -> " + regra.get(intRegra).pegarAlfabeto(intAlfabeto)));
+			
 			//Busca a regra na palavra que esta sendo computada.
 			for (int i = 0; i < computandoPalavra.length(); i++) {
 				for (int j = 0; j < regra.size(); j++) {
