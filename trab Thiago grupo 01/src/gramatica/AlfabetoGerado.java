@@ -3,7 +3,7 @@ package gramatica;
  * Class criada para guardar o alfabeto que pode ser gerado por um caracter específico.
  * Ex : X - abS
  * 	X - a
- * Sendo X o caracter específico que pode ser substituído por abS ou a para formar a palavra.
+ * Sendo X o caracter específico que pode ser substituído por abS ou a, para formar a palavra.
  * @author RafaelSene
  *
  */
@@ -20,8 +20,8 @@ public class AlfabetoGerado {
 	}
 	
 	/**
-	 * Retorna a String guardada
-	 * @return retorna a String
+	 * Retorna a String guardada.
+	 * @return retorna a String.
 	 */
 	public String getAlfabeto() {
 		return alfabeto;
