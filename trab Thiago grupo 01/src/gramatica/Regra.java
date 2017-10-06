@@ -3,8 +3,8 @@ package gramatica;
 import java.util.ArrayList;
 
 /**
- * Class criada para guarda regras de producao onde temos uma regra que referece a um caracter espesifico
- * e temos um Arraylist(AlfabetoGerado) contento o alfabeto que pode ser substituido por este caracter da regra.
+ * Class criada para guardar as regras de produção, onde temos uma regra que se refere a um caracter específico,
+ * e temos um Arraylist(AlfabetoGerado) contento o alfabeto que pode ser substituído por este caracter da regra.
  * @author RafaelSene
  */
 public class Regra {
@@ -12,15 +12,15 @@ public class Regra {
 	private ArrayList<AlfabetoGerado> alfabetoGerado;
 	
 	/**
-	 * Recebe uma String do usuario para criacao do Array nele criamos uma Matriz.
-	 * Para cada regra temos varios alfabetos.
+	 * Recebe uma String do usuário para a criação do Array. Nele criamos uma Matriz.
+	 * Para cada regra temos vários alfabetos.
 	 * Ex : X - abS
-	 * 		X - a
-	 * 		Y - b
+	 * 	X - a
+	 * 	Y - b
 	 * Em regra.get(Possicao).getRegra - temos:X(Possicao[0]) , Y(Possicao[1]).
-	 * Em regra.get(Possicao).alfabetoGerado.get(Possicao).getAlfabeto - Em X(Possicao[0]) Temos: abS(Possicao[0])
-	 * Em regra.get(Possicao).alfabetoGerado.get(Possicao).getAlfabeto - Em X(Possicao[1]) Temos: a(Possicao[1])
-	 * Em regra.get(Possicao).alfabetoGerado.get(Possicao).getAlfabeto - EM Y(Possicao[1]) Temos: b(Possicao[0])
+	 * Em regra.get(Possicao).alfabetoGerado.get(Possicao).getAlfabeto - Em X(Possicao[0]) Temos: abS(Possicao[0]).
+	 * Em regra.get(Possicao).alfabetoGerado.get(Possicao).getAlfabeto - Em X(Possicao[1]) Temos: a(Possicao[1]).
+	 * Em regra.get(Possicao).alfabetoGerado.get(Possicao).getAlfabeto - EM Y(Possicao[1]) Temos: b(Possicao[0]).
 	 * 
 	 * @param regra recebe uma String.
 	 */
@@ -30,16 +30,16 @@ public class Regra {
 	}
 
 	/**
-	 * Pega a String guardada em uma possicao.
-	 * @return retorna String na possicao.
+	 * Pega a String guardada em uma posição.
+	 * @return retorna uma String na posição.
 	 */
 	public String getRegra() {
 		return regra;
 	}
 
 	/**
-	 * Edita a regra em uma possicao.
-	 * @param regra String de substituicao.
+	 * Edita a regra em uma posição.
+	 * @param regra String de substituição.
 	 */
 	public void setRegra(String regra) {
 		this.regra = regra;
@@ -47,7 +47,7 @@ public class Regra {
 	
 	/**
 	 * Adiciona um alfabeto referente a regra.
-	 * @param entraAlfabeto String na qual voce entra com o alfabeto e e guardado.
+	 * @param entraAlfabeto String na qual você entra com o alfabeto e ele é guardado.
 	 */
 	public void addAlfabeto(String entraAlfabeto) {
 		AlfabetoGerado alfabeto = new AlfabetoGerado(entraAlfabeto);
@@ -55,8 +55,8 @@ public class Regra {
 	}
 	
 	/**
-	 * Pega um alfabeto de um caracter especifico referente a possicao (i) passada.
-	 * @param i possicao passada.
+	 * Pega um alfabeto de um caracter específico referente a posição (i) passada.
+	 * @param i posição passada.
 	 * @return retorna a String(alfabedo guardado nequela possicao).
 	 */
 	public String pegarAlfabeto(int i) {
@@ -66,7 +66,7 @@ public class Regra {
 	}
 	
 	/**
-	 * Retorna o tamanho do alfabeto que um caracter especifico pode gerar.
+	 * Retorna o tamanho do alfabeto que um caracter específico pode gerar.
 	 * @return retorna tamanho (int).
 	 */
 	public int tamanho(){
