@@ -1,14 +1,14 @@
 package gramatica;
 
 /**
- * Class principal, funcao unica de chamar a class Metodos.
+ * Class principal, função única de chamar a class Métodos.
  * @author RafaelSene
  */
 public class Main {
 
 	/**
 	 * Inicia o programa chamando outra Class.
-	 * @param args Metodo Main.
+	 * @param args Método Main.
 	 */
 	public static void main(String[] args) {
 		Metodos iniciar = new Metodos();
