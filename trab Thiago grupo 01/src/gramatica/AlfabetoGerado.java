@@ -1,9 +1,9 @@
 package gramatica;
 /**
- * Class criada para guarda o alfabeto que pode ser gerado por um caracter especifico.
+ * Class criada para guardar o alfabeto que pode ser gerado por um caracter específico.
  * Ex : X - abS
- * 		X - a
- * Sendo X o caracter especifico que pode ser substituido por abS ou a para forma a palavra.
+ * 	X - a
+ * Sendo X o caracter específico que pode ser substituido por abS ou a para formar a palavra.
  * @author RafaelSene
  *
  */
@@ -12,7 +12,7 @@ public class AlfabetoGerado {
 	private String alfabeto;
 	
 	/**
-	 * Preenche a variavel com a String passada.
+	 * Preenche a variável com a String passada.
 	 * @param alfabeto recebe a String passada.
 	 */
 	public AlfabetoGerado(String alfabeto) {
