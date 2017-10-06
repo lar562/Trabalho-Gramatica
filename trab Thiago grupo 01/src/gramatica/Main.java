@@ -1,7 +1,7 @@
 package gramatica;
 
 /**
- * Class principal, função única de chamar a class Métodos.
+ * Class principal, função única para chamar a class Métodos.
  * @author RafaelSene
  */
 public class Main {
