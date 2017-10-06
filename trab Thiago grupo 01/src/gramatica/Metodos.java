@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * Class responsavel pelo programa onde esta todos os codigos para execucao.
+ * Class responsável pelo programa onde está todos os códigos para execução.
  * @author RafaelSene
  * 
  */
@@ -18,7 +18,7 @@ public class Metodos {
 	private ArrayList<String> todaComputacao = new ArrayList<String>();
 	
 	/**
-	 * Chamo as etapas do programa.
+	 * Chama as etapas do programa.
 	 */
 	public Metodos() {
 		String novaPalavra = "y";
@@ -37,7 +37,7 @@ public class Metodos {
 	}
 	
 	/**
-	 * Pega uma string digitada pelo usuario
+	 * Pega uma string digitada pelo usuário.
 	 * @return retorna a String digitada.
 	 */
 	public String recebeString() {
@@ -47,22 +47,22 @@ public class Metodos {
 	}
 	
 	/**
-	 * Cria e separa a regra de producao.
-	 * Ficando em loop ate o usuario passa "0"
-	 * Dentro do loop recebemos o que o usuario digitou e logo em siguida temos os seguinte tratamento:
+	 * Cria e separa a regra de produção.
+	 * Ficando em loop até o usuário passar "0".
+	 * Dentro do loop recebemos o que o usuário digitou e logo em seguida temos os seguintes tratamentos:
 	 * String[] regraGerada = regraProducao.split("/");  Separa a regra do alfabeto.
-	 * As linha seguintes pega o que foi separado e verifica se tem na Lista, se tem e so adicionado mais um alfabeto a determinada regra
-	 * caso nao tenha ele ja cria a regra e adiciona o alfabeto a essa regra.
+	 * As linhas seguintes pegão o que foi separado e verificam se têm na Lista, se tem é adicionado mais um alfabeto na determinada regra
+	 * Caso não tenha, ele logo cria a regra e adiciona o alfabeto a ela.
 	 * Lembrando:
 	 * Ex:	X - abS
-	 * 		X - a
-	 * 		Y - b
-	 * Regra me refiro a X e Y comforme o exemplo acima.
-	 * alfabeto me refiro a abS,a,b comforme o exemplo acima, ou seja alfabeto seria a String na qual a regra pode ser trocada.
+	 * 	X - a
+	 * 	Y - b
+	 *A regra se refere a X e Y, comforme o exemplo acima.
+	 *O alfabeto se refere a abS,a,b, comforme o exemplo acima, ou seja, ele seria a String na qual a regra pode ser trocada.
 	 */
 	public void separarRegraProducao(){	
-		System.out.print("Entre com regra de producao os separando por / ( Barra )"
-				+ "\numa por fez sempre precionando ENTER em seguida, 0 (zero) para parar de entra com o alfabeto."
+		System.out.print("Entre com regra de produção separando-a por / ( Barra )"
+				+ "\uma por vez, sempre precionando ENTER em seguida. 0 (zero) é para parar com a entrada de regras."
 				+ " \nExemplo: S/aSb S/a S/a: ");
 		String regraProducao;
 		do{
@@ -87,18 +87,18 @@ public class Metodos {
 	}
 	
 	/**
-	 * Define o ponto de partida da computacoa da palavra.
+	 * Define o ponto de partida da computacão da palavra.
 	 */
 	public void pontoDePartida(){
-		System.out.print("Entre com o Caracter de Inicio : ");
+		System.out.print("Entre com o Caracter de Início : ");
 		partida = recebeString();
 	}
 	
 	/**
-	 * Pega a String passada pelo usuario a separando e guardando na Lista de terminais.
+	 * Pega a String passada pelo usuário, separando e guardando-a na Lista de terminais.
 	 */
 	public void caracterTerminais(){
-		System.out.print("Entre com os Terminais os separando por , (Virgula) Ex: a,b : ");
+		System.out.print("Entre com os Terminais separando-os por , (Vírgula). Ex: a,b : ");
 		String terminaisNaoSeparado = recebeString();
 		String[] terminaisSeparadoEmVetor = terminaisNaoSeparado.split(",");
 		for(int i = 0; i < terminaisSeparadoEmVetor.length; i++){
@@ -107,7 +107,7 @@ public class Metodos {
 	}
 	
 	/**
-	 * Pega a palavra a ser computada
+	 * Pega a palavra a ser computada.
 	 */
 	public void palavraParaComputar(){
 		System.out.print("Entre com a palavra a ser computada : ");
@@ -115,7 +115,7 @@ public class Metodos {
 	}
 	
 	/**
-	 * Este medoto computa a palavra conforme as escolha do usuario e mostra o resultado no final.
+	 * Este médoto computa a palavra conforme as escolhas do usuário, e mostra os resultados no final.
 	 */
 	public void computarPalavra(){
 
@@ -129,7 +129,7 @@ public class Metodos {
 			boolean busca = false;
 			todaComputacao.add(new String(computandoPalavra));
 			System.out.println("Computar palavra : " + computandoPalavra);
-			//Busca a regra na palavra que esta sendo computada.
+			//Busca a regra na palavra que está sendo computada.
 			for (int i = 0; i < computandoPalavra.length(); i++) {
 				for (int j = 0; j < regra.size(); j++) {
 					String primeiro = computandoPalavra.charAt(i) + "";
@@ -145,8 +145,8 @@ public class Metodos {
 					break;
 			}
 			busca = false;
-			System.out.println("Escolha uma das opcoes:");
-			//Lista as opcoes.
+			System.out.println("Escolha uma das opções:");
+			//Lista as opções.
 			for (int i = 0; i < regra.get(intRegra).tamanho(); i++) {
 				System.out.println(i + " = " + regra.get(intRegra).getRegra() + " -> " + regra.get(intRegra).pegarAlfabeto(i));
 			}
@@ -154,10 +154,10 @@ public class Metodos {
 			Scanner input = new Scanner(System.in);
 			intAlfabeto = input.nextInt();
 			
-			//Adiciona as escolha de transacao para motra ao usuario depois.
+			//Adiciona as escolhas de transação para motrar ao usuário depois.
 			todaComputacao.add(new String(regra.get(intRegra).getRegra() + " -> " + regra.get(intRegra).pegarAlfabeto(intAlfabeto)));
 			
-			//Busca a regra na palavra que esta sendo computada.
+			//Busca a regra na palavra que está sendo computada.
 			for (int i = 0; i < computandoPalavra.length(); i++) {
 				for (int j = 0; j < regra.size(); j++) {
 					String primeiro = computandoPalavra.charAt(i) + "";
@@ -173,13 +173,13 @@ public class Metodos {
 				if(busca)
 					break;
 			}
-			//Verifica se a palavra computada esta toda correta.
+			//Verifica se as palavras computadas estão todas corretas.
 			if(palavra.equals(computandoPalavra)){
-				System.out.println("Palavra computada corretamente");
+				System.out.println("Palavra computada corretamente!!");
 				resultado = true;
 			}
 			
-			//Busca por regra de producao na palavra.
+			//Busca por regras de prodção na palavra.
 			buscaRegra = 0;
 			for (int i = 0; i < computandoPalavra.length(); i++) {
 				for (int j = 0; j < regra.size(); j++) {
@@ -191,11 +191,11 @@ public class Metodos {
 				}
 			}
 			
-			//Verifica se a palavra computada esta errada.
+			//Verifica se a palavra computada está errada.
 			if((!palavra.equals(computandoPalavra) && buscaRegra == 0 && !resultado) || 
 					(palavra.length() < computandoPalavra.length() + 1 && 
 							buscaRegra <= computandoPalavra.length() - palavra.length() && !resultado)){
-				System.out.println("Palavra nao pode ser computada");
+				System.out.println("Palavra não pode ser computada!!");
 				resultado = true;
 			}
 			
