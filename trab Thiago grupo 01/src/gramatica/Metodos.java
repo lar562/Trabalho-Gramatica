@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * Class responsável pelo programa onde está todos os códigos para execução.
+ * Class responsável pelo programa onde está todos os códigos para a execução.
  * @author RafaelSene
  * 
  */
